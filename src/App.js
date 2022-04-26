@@ -13,7 +13,7 @@ function App() {
   return (
     <div className={darkTheme ? 'dark' : ''}>
       <div className="bg-gray-100 darkTheme:bg-gray-900 darkTheme:text-gray-200 min-h-screen">
-        <Navbar />
+        <Navbar darkTheme={darkTheme} setDarkTheme={setDarkTheme} />
         <Routes />
         <Footer />
       </div>

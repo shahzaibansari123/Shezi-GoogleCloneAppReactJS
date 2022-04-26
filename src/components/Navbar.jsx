@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Navbar = (props) => {
+const Navbar = ({darkTheme, setDarkTheme}) => {
   return (
     <div className="p-5 pb-0 flex flex-wrap sm:justify-between justify-center border-b darkTheme:border-gray-700 border-gray-200">
       <div className="flex justify-between items-center space-x-5 w-screen ">
@@ -10,6 +10,9 @@ const Navbar = (props) => {
             Googly 🔎 
           </p>
         </Link>
+        <button type="button" onClick={()=> setDarkTheme(!darkTheme)} className="text-xl darkTheme:bg-gray-500 darkTheme:text-gray-900 bg-white  border rounded-full px-2 py-1 hover:shadow-lg">
+          {darkTheme ? 'light 💡 ' : 'Dark 🌙 '}
+        </button>
       </div>
     </div>
   );

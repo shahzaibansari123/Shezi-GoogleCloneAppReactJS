@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Routes = () => {
+const Routes = () => {
   return (
     <div>
       <h1>routes</h1>
@@ -8,4 +8,4 @@ export const Routes = () => {
   )
 }
 
-
+export default Routes

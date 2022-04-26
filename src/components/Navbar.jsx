@@ -1,11 +1,12 @@
 import React from 'react'
 
-
-export const Navbar = () => {
+const Navbar = () => {
   return (
-    <div className='p-5 pb-0 flex flex-wrap'>
-      <h1>Navbar</h1>
+    <div >
+      <h1 className="p-5 pb-0 flex flex-wrap">Navbar</h1>
     
     </div>
   )
 }
+
+export default Navbar

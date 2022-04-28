@@ -7,7 +7,7 @@ export const ResultContextProvider=({children})=>{
 
     const [results, setResults]=useState([])
     const[isLoading, setIsLoading]=useState(false)
-    const [searchTerm,setSearchTerm]=useState('')
+    const [searchTerm,setSearchTerm]=useState('JS Mastery')
 
     //search /images/ videos type prop
    const getResults= async (type)=>{

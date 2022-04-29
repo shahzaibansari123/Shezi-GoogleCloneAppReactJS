@@ -6,7 +6,7 @@ import { useResultContext } from "../contexts/ResultContextProvider";
 import Loading from "./Loading";
 
 const Results = () => {
-  const { results: {results,image_results}, isLoading, getResults, searchTerm } = useResultContext();
+  const { results, isLoading, getResults, searchTerm } = useResultContext();
   const location = useLocation();
 
   useEffect(() => {
@@ -45,7 +45,7 @@ const Results = () => {
     case "/image":
       return (
         <div className="flex flex-wrap justify-center items-center">
-          {image_results?.map(
+          {results?.map(
             ({ image, link: { href, title } }, index) => (
               <a
                 className="sm:p-3 p-5"
@@ -64,8 +64,8 @@ const Results = () => {
     case "/news":
       return (
         <div className="flex flex-wrap justify-between space-y-6 sm:px-56 items-center">
-          {console.log(news)}
-          {news?.map(({ links, id, source, title }) => (
+          {/* {console.log(news)} */}
+          {results?.map(({ links, id, source, title }) => (
             <div key={id} className="md:w-2/5 w-full">
               <a href={links?.[0].href} target="_blank" rel="noreferrer" className="hover:underline">
                
@@ -83,7 +83,15 @@ const Results = () => {
         </div>
       );
     case "/videos":
-      return "vdeos";
+      return(
+        <div className="flex flex-wrap">
+          {results.map((video,index)=>(
+            <div key={index} className="p-2">
+              <ReactPlayer url={video.additional_links?.[0].href} controls width="355px" height="200px"/>
+            </div>
+          ))}
+        </div>
+      );
 
     default:
       return "ERROR";

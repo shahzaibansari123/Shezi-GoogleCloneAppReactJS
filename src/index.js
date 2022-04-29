@@ -10,7 +10,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <ResultContextProvider>
-    <Router>
+    <Router forceRefresh>
     <App />
     </Router>
     </ResultContextProvider>
